@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--配置springmvc的设置，主要是控制网站跳转逻辑的控制-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+      >
+    <!-- 配置组件扫描 只扫描控制器-->
+    <context:component-scan base-package="com.lsw.curd.controller" />
+    <!-- 配置MVC注解扫描 进行一些更加高级的操作-->
+    <mvc:annotation-driven />
+    <!-- mvc处理不了的，交给tomcat来处理-->
+    <mvc:default-servlet-handler />
+    <!-- 配置视图解析器， -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/" /><!-- 前缀 -->
+        <property name="suffix" value=".jsp" /><!-- 后缀 -->
+    </bean>
+
+<!--    &lt;!&ndash; 配置拦截器 &ndash;&gt;
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/*"/>
+            <bean class="interceptors.SomeInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>-->
+</beans>
