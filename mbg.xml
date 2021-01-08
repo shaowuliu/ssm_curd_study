@@ -19,7 +19,7 @@
     </javaTypeResolver>
 
 
-    <!--2. 指定生成的地址，及放到那里去 -->
+    <!--2. 指定生成bean方面的地址，及放到那里去 -->
     <javaModelGenerator targetPackage="com.lsw.curd.bean"
     targetProject=".\src\main\java">
       <property name="enableSubPackages" value="true" />

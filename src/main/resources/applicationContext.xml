@@ -17,8 +17,8 @@
         <property name="user" value="${jdbc.user}"></property>
         <property name="password" value="${jdbc.password}"></property>
     </bean>
-    <!-- 配置自定扫描的包 -->
-    <context:component-scan base-package="com.lsw"></context:component-scan>
+    <!-- 配置自定扫描的包 就是扫描那些包的注解-->
+    <context:component-scan base-package="com.lsw.curd"></context:component-scan>
 
 
     <!--配置和mybatis的整合-->
@@ -32,7 +32,7 @@
       <!--配置扫描器，将mybatis的接口的实现加到ioc容器中-->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <!--扫描所有的dao接口的实现，加到ioc容器中-->
-        <property name="basePackage" value="com.lsw.curd.dao"></property>
+        <property name="basePackage" value="com.lsw.curd"></property>
     </bean>
 
     <!--事务控制的配置-->

@@ -7,6 +7,8 @@ import com.lsw.curd.dao.EmployeeMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -18,21 +20,20 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"}) //指定spring的配置文件，自动生成ioc容器
 public class MapperTest {
-
     @Autowired
     DepartmentMapper departmentMapper;
 
     @Autowired
     EmployeeMapper employeeMapper;
 
-    /*测试departmentmapper*/
+/*    测试departmentmapper*/
     @Test
     public void test1(){
-    /*
+
         //1.创建SpringIOC容器
         ApplicationContext ioc=new ClassPathXmlApplicationContext("applicationContext.xml");
         //2.从容器中获取mapper
-        ioc.getBean(DepartmentMapper.class);*/
+        ioc.getBean(DepartmentMapper.class);
         
         System.out.println(departmentMapper);
 
